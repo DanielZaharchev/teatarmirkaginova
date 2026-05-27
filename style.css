@@ -427,7 +427,6 @@ footer{
 .curtain-left,
 .curtain-right{
   position:absolute;
-
   top:0;
 
   width:50%;
@@ -441,6 +440,10 @@ footer{
     #8b0000 60px,
     #3a0000 90px
   );
+
+  box-shadow:
+    inset -20px 0 30px rgba(0,0,0,0.4),
+    inset 20px 0 30px rgba(0,0,0,0.4);
 }
 
 .curtain-left{
