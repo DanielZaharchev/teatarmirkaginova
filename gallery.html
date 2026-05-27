@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Галерија</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  animation: lbFadeIn 0.25s ease;
+}
+
+@keyframes lbFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+.lb-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+#lb-img {
+  max-width: 88vw;
+  max-height: 78vh;
+  border-radius: 14px;
+  box-shadow: 0 0 60px rgba(180,0,0,0.3), 0 30px 80px rgba(0,0,0,0.8);
+  object-fit: contain;
+  animation: lbZoomIn 0.3s cubic-bezier(0.34,1.3,0.64,1);
+}
+
+@keyframes lbZoomIn {
+  from { transform: scale(0.88); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+#lb-caption {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #ffb300;
+}
+
+#lb-counter {
+  font-size: 13px;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.lb-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lb-close:hover {
+  background: #6f0000;
+  border-color: #b00000;
+}
+
+.lb-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid #333;
+  color: white;
+  font-size: 26px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.lb-arrow:hover {
+  background: #6f0000;
+  border-color: #b00000;
+}
+#lb-prev { left: 18px; }
+#lb-next { right: 18px; }
+
+.photo { cursor: zoom-in; }
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPy3yxMBMo8drAe4vYuM9fNyiMT8QwUuF4Uw&s">
+<h1>🎭 Галерија</h1>
+</div>
+<nav>
+<a href="index.html">Почетна</a>
+<a href="history.html">Историја</a>
+<a href="events.html">Настани</a>
+<a href="gallery.html" class="active">Галерија</a>
+</nav>
+</header>
+
+<section class="gallery-title">🎬 Умри машки (2022)</section>
+<section class="gallery" data-album="Умри машки (2022)">
+<div class="photo"><img src="https://i.imgur.com/WejJasG.jpeg"><p>Сцена 1</p></div>
+<div class="photo"><img src="https://i.imgur.com/u5syu4B.jpeg"><p>Сцена 2</p></div>
+<div class="photo"><img src="https://i.imgur.com/PlB5dy3.jpeg"><p>Сцена 3</p></div>
+<div class="photo"><img src="https://i.imgur.com/N9apPAZ.jpeg"><p>Сцена 4</p></div>
+<div class="photo"><img src="https://i.imgur.com/YwUYn49.jpeg"><p>Сцена 5</p></div>
+</section>
+
+<section class="gallery-title">💰 Парите се отепувачка (2014)</section>
+<section class="gallery" data-album="Парите се отепувачка (2014)">
+<div class="photo"><img src="https://i.imgur.com/tZALHaf.jpeg"><p>Сцена 1</p></div>
+<div class="photo"><img src="https://i.imgur.com/r3RN5s3.jpeg"><p>Сцена 2</p></div>
+<div class="photo"><img src="https://i.imgur.com/aGpPyU1.jpeg"><p>Сцена 3</p></div>
+<div class="photo"><img src="https://i.imgur.com/x02G8wc.jpeg"><p>Сцена 4</p></div>
+<div class="photo"><img src="https://i.imgur.com/Qy8uNvg.jpeg"><p>Сцена 5</p></div>
+</section>
+
+<section class="gallery-title">💰 Парите се отепувачка (2025)</section>
+<section class="gallery" data-album="Парите се отепувачка (2025)">
+<div class="photo"><img src="https://i.imgur.com/kYrwoXv.jpeg"><p>Сцена 1</p></div>
+<div class="photo"><img src="https://i.imgur.com/jUzYtHz.jpeg"><p>Сцена 2</p></div>
+<div class="photo"><img src="https://i.imgur.com/oqlgWOg.jpeg"><p>Сцена 3</p></div>
+<div class="photo"><img src="https://i.imgur.com/9UiZ83H.jpeg"><p>Сцена 4</p></div>
+<div class="photo"><img src="https://i.imgur.com/WYGoQVK.jpeg"><p>Сцена 5</p></div>
+</section>
+
+<div id="lightbox">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <button class="lb-arrow" id="lb-prev" onclick="changeImg(-1)">&#8592;</button>
+  <div class="lb-inner">
+    <img id="lb-img" src="" alt="">
+    <div id="lb-caption"></div>
+    <div id="lb-counter"></div>
+  </div>
+  <button class="lb-arrow" id="lb-next" onclick="changeImg(1)">&#8594;</button>
+</div>
+
+<footer>
+<p>© 2026 Театар Мирка Гинова</p>
+</footer>
+
+<script src="transitions.js"></script>
+<script>
+const allImages = [];
+
+document.querySelectorAll('.gallery').forEach(gallery => {
+  const album = gallery.getAttribute('data-album');
+  gallery.querySelectorAll('.photo').forEach((photo, i) => {
+    const img = photo.querySelector('img');
+    const caption = photo.querySelector('p').textContent;
+    const idx = allImages.length;
+    allImages.push({ src: img.src, caption, album });
+    photo.addEventListener('click', () => openLB(idx));
+  });
+});
+
+let current = 0;
+
+function openLB(idx) {
+  current = idx;
+  showImg();
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLB() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function showImg() {
+  const item = allImages[current];
+  const imgEl = document.getElementById('lb-img');
+  imgEl.style.animation = 'none';
+  imgEl.offsetHeight;
+  imgEl.style.animation = '';
+  imgEl.src = item.src;
+  document.getElementById('lb-caption').textContent = item.album + ' — ' + item.caption;
+  document.getElementById('lb-counter').textContent = (current + 1) + ' / ' + allImages.length;
+}
+
+function changeImg(dir) {
+  current = (current + dir + allImages.length) % allImages.length;
+  showImg();
+}
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'ArrowRight') changeImg(1);
+  if (e.key === 'ArrowLeft')  changeImg(-1);
+  if (e.key === 'Escape')     closeLB();
+});
+
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target === document.getElementById('lightbox')) closeLB();
+});
+</script>
+
+</body>
+</html>
