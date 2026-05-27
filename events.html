@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Настани</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+#popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  backdrop-filter: blur(6px);
+  animation: popupFadeIn 0.3s ease;
+}
+
+@keyframes popupFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.popup-box {
+  background: linear-gradient(145deg, #111, #0a0a0a);
+  border: 1px solid #6f0000;
+  border-radius: 20px;
+  padding: 50px 45px 40px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 0 0 1px #b30000, 0 0 60px rgba(180,0,0,0.25), 0 30px 80px rgba(0,0,0,0.7);
+  animation: popupSlideUp 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes popupSlideUp {
+  from { transform: translateY(40px) scale(0.95); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.popup-icon {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 18px;
+  animation: tickBounce 0.5s 0.2s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+@keyframes tickBounce {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+.popup-box h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.popup-box .popup-subtitle {
+  color: #ffb300;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.popup-box .popup-text {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.popup-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #6f0000, #ffb300);
+  margin: 0 auto 28px;
+  border-radius: 2px;
+}
+
+.popup-close {
+  background: linear-gradient(90deg, #5c0000, #b00000);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 40px;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1px;
+}
+
+.popup-close:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255,0,0,0.3);
+}
+
+.popup-x {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+  line-height: 1;
+}
+
+.popup-x:hover {
+  color: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPy3yxMBMo8drAe4vYuM9fNyiMT8QwUuF4Uw&s">
+<h1>🎟️ Настани</h1>
+</div>
+<nav>
+<a href="index.html">Почетна</a>
+<a href="history.html">Историја</a>
+<a href="events.html" class="active">Настани</a>
+<a href="gallery.html">Галерија</a>
+</nav>
+</header>
+
+<section class="events-grid">
+
+<div class="event-card">
+<h3>Хамлет</h3>
+<p class="event-date">15 Јуни 2026 • 20:00</p>
+<p class="price">300 ден</p>
+<button onclick="reserve('Хамлет', '15 Јуни 2026 • 20:00', '300 ден')">Купи карта</button>
+</div>
+
+<div class="event-card">
+<h3>Комедија вечер</h3>
+<p class="event-date">22 Јуни 2026 • 19:30</p>
+<p class="price">200 ден</p>
+<button onclick="reserve('Комедија вечер', '22 Јуни 2026 • 19:30', '200 ден')">Купи карта</button>
+</div>
+
+<div class="event-card">
+<h3>Детска претстава</h3>
+<p class="event-date">1 Јули 2026 • 18:00</p>
+<p class="price">150 ден</p>
+<button onclick="reserve('Детска претстава', '1 Јули 2026 • 18:00', '150 ден')">Купи карта</button>
+</div>
+
+</section>
+
+<div id="popup">
+  <div class="popup-box">
+    <button class="popup-x" onclick="closePopup()">✕</button>
+    <span class="popup-icon">🎟️</span>
+    <p class="popup-subtitle">Резервација потврдена</p>
+    <h2 id="popup-title">Хамлет</h2>
+    <div class="popup-divider"></div>
+    <p class="popup-text" id="popup-info"></p>
+    <button class="popup-close" onclick="closePopup()">Во ред, фала!</button>
+  </div>
+</div>
+
+<footer>
+<p>© 2026 Театар Мирка Гинова</p>
+</footer>
+
+<script src="transitions.js"></script>
+<script>
+function reserve(name, date, price) {
+  document.getElementById("popup-title").textContent = name;
+  document.getElementById("popup-info").innerHTML = date + "<br>Цена: " + price;
+  document.getElementById("popup").style.display = "flex";
+}
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+document.getElementById("popup").addEventListener("click", function(e) {
+  if (e.target === this) closePopup();
+});
+</script>
+
+</body>
+</html>
