@@ -399,6 +399,57 @@ nav a.active{
   line-height:1.9;
   margin-bottom:20px;
 }
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+  padding:70px 30px;
+  background:#050505;
+  text-align:center;
+}
+
+.contact h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;
+  color:#ffb300;
+  margin-bottom:35px;
+}
+
+.contact-grid{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:24px;
+}
+
+.contact-card{
+  width:280px;
+  padding:30px;
+
+  background:#0d0d0d;
+
+  border:1px solid #1b1b1b;
+  border-radius:18px;
+
+  transition:.3s;
+}
+
+.contact-card:hover{
+  transform:translateY(-5px);
+  border-color:#6f0000;
+}
+
+.contact-card h3{
+  margin-bottom:12px;
+  color:#ffb300;
+}
+
+.contact-card p{
+  color:#c2c2c2;
+  line-height:1.8;
+}
 /* =========================
    FOOTER
 ========================= */
@@ -624,6 +675,20 @@ footer{
 
   .about p{
     font-size:15px;
+  }
+    /* CONTACT */
+
+  .contact{
+    padding:50px 20px;
+  }
+
+  .contact h2{
+    font-size:34px;
+  }
+
+  .contact-card{
+    width:100%;
+    max-width:330px;
   }
   /* HISTORY */
   .history{
