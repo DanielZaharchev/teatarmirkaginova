@@ -370,7 +370,35 @@ nav a.active{
 
   font-size:13px;
 }
+/* =========================
+   ABOUT
+========================= */
 
+.about{
+  padding:70px 30px;
+  background:#080808;
+}
+
+.about-container{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+.about h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;
+  color:#ffb300;
+  margin-bottom:25px;
+  letter-spacing:1px;
+}
+
+.about p{
+  color:#c2c2c2;
+  font-size:18px;
+  line-height:1.9;
+  margin-bottom:20px;
+}
 /* =========================
    FOOTER
 ========================= */
@@ -585,7 +613,18 @@ footer{
 
     padding:26px;
   }
+  /* ABOUT */
+  .about{
+    padding:50px 20px;
+  }
 
+  .about h2{
+    font-size:34px;
+  }
+
+  .about p{
+    font-size:15px;
+  }
   /* HISTORY */
   .history{
     padding:20px;
