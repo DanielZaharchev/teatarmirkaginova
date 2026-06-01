@@ -168,6 +168,51 @@ nav a.active{
 }
 
 /* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section{
+  padding:60px 30px;
+  text-align:center;
+  background:#080808;
+}
+
+.countdown-section h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;
+  color:#ffb300;
+  margin-bottom:30px;
+}
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.time-box{
+  width:140px;
+  padding:25px;
+
+  background:#0d0d0d;
+
+  border:1px solid #1b1b1b;
+  border-radius:18px;
+}
+
+.time-box span{
+  display:block;
+  font-size:42px;
+  font-weight:700;
+  color:#ffb300;
+}
+
+.time-box p{
+  margin-top:8px;
+  color:#c2c2c2;
+}
+/* =========================
    CARDS
 ========================= */
 .cards{
@@ -663,6 +708,20 @@ footer{
     max-width:330px;
 
     padding:26px;
+  }
+    /* COUNTDOWN */
+
+  .countdown-section h2{
+    font-size:34px;
+  }
+
+  .time-box{
+    width:120px;
+    padding:20px;
+  }
+
+  .time-box span{
+    font-size:30px;
   }
   /* ABOUT */
   .about{
