@@ -839,14 +839,6 @@ footer{
 }
 
 
-.repertoire-poster:hover{
-  transform:scale(1.03);
-}
-.repertoire-layout{
-  display:flex;
-  align-items:center;
-  gap:30px;
-}
 
 .repertoire-poster{
   width:180px;
