@@ -822,4 +822,23 @@ footer{
     font-size:13px;
     padding:18px;
   }
+  .repertoire-poster{
+  width:100%;
+  max-width:320px;
+  display:block;
+
+  margin:20px auto;
+
+  border-radius:12px;
+
+  object-fit:cover;
+
+  box-shadow:0 0 25px rgba(0,0,0,.4);
+
+  transition:.3s;
+}
+
+.repertoire-poster:hover{
+  transform:scale(1.03);
+}
 }
