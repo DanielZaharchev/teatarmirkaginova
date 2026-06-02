@@ -609,6 +609,25 @@ footer{
   0%{transform:translateY(0);}
   100%{transform:translateY(-120%);}
 }
+.repertoire-layout{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.repertoire-poster{
+  width:120px;
+  height:170px;
+  object-fit:cover;
+  border-radius:10px;
+  flex-shrink:0;
+  display:block;
+  box-shadow:0 0 15px rgba(0,0,0,.3);
+}
+
+.repertoire-info{
+  flex:1;
+}
 /* =========================
    MOBILE RESPONSIVE
 ========================= */
@@ -822,17 +841,5 @@ footer{
     font-size:13px;
     padding:18px;
   }
- .repertoire-poster{
-  width:120px !important;
-  height:170px !important;
-
-  object-fit:cover;
-  border-radius:10px;
-
-  flex-shrink:0;
-
-  display:block;
-
-  box-shadow:0 0 15px rgba(0,0,0,.3);
-}
+ 
 }
