@@ -842,4 +842,37 @@ footer{
 .repertoire-poster:hover{
   transform:scale(1.03);
 }
+.repertoire-layout{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.repertoire-poster{
+  width:180px;
+  height:260px;
+  object-fit:cover;
+  border-radius:12px;
+  flex-shrink:0;
+
+  box-shadow:0 0 20px rgba(0,0,0,.35);
+}
+
+.repertoire-info{
+  flex:1;
+}
+
+@media(max-width:768px){
+
+  .repertoire-layout{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .repertoire-poster{
+    width:160px;
+    height:230px;
+  }
+
+}
 }
