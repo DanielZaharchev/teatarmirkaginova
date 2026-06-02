@@ -841,30 +841,16 @@ footer{
 
 
 .repertoire-poster{
-  width:180px;
-  height:260px;
+  width:120px;
+  height:170px;
+
   object-fit:cover;
-  border-radius:12px;
+
+  border-radius:10px;
+
   flex-shrink:0;
 
-  box-shadow:0 0 20px rgba(0,0,0,.35);
+  box-shadow:0 0 15px rgba(0,0,0,.3);
 }
-
-.repertoire-info{
-  flex:1;
-}
-
-@media(max-width:768px){
-
-  .repertoire-layout{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .repertoire-poster{
-    width:160px;
-    height:230px;
-  }
-
 }
 }
