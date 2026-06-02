@@ -496,6 +496,26 @@ nav a.active{
   line-height:1.8;
 }
 /* =========================
+   BUY TICKETS BUTTON
+========================= */
+
+.buy-tickets-btn{
+  background:linear-gradient(90deg,#5c0000,#b00000);
+  color:white;
+  border:none;
+  padding:16px 34px;
+  border-radius:12px;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.buy-tickets-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 25px rgba(255,0,0,.25);
+}
+/* =========================
    FOOTER
 ========================= */
 footer{
