@@ -822,35 +822,17 @@ footer{
     font-size:13px;
     padding:18px;
   }
-  .repertoire-poster{
-  width:100%;
-  max-width:220px;
-
-  display:block;
-  margin:15px auto;
-
-  border-radius:12px;
+ .repertoire-poster{
+  width:120px !important;
+  height:170px !important;
 
   object-fit:cover;
-
-  box-shadow:0 0 20px rgba(0,0,0,.3);
-
-  transition:.3s;
-}
-
-
-
-.repertoire-poster{
-  width:120px;
-  height:170px;
-
-  object-fit:cover;
-
   border-radius:10px;
 
   flex-shrink:0;
 
+  display:block;
+
   box-shadow:0 0 15px rgba(0,0,0,.3);
-}
 }
 }
