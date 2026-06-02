@@ -824,19 +824,20 @@ footer{
   }
   .repertoire-poster{
   width:100%;
-  max-width:320px;
-  display:block;
+  max-width:220px;
 
-  margin:20px auto;
+  display:block;
+  margin:15px auto;
 
   border-radius:12px;
 
   object-fit:cover;
 
-  box-shadow:0 0 25px rgba(0,0,0,.4);
+  box-shadow:0 0 20px rgba(0,0,0,.3);
 
   transition:.3s;
 }
+
 
 .repertoire-poster:hover{
   transform:scale(1.03);
